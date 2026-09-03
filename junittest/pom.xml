@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Define que este arquivo utiliza XML e codificação UTF-8 -->
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Elemento principal do projeto Maven -->
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <!-- Versão do modelo POM utilizado pelo Maven -->
+
+
+    <groupId>com.senai.br</groupId>
+    <!-- Identifica o grupo, organização ou empresa responsável pelo projeto -->
+    <!-- Normalmente utiliza o domínio da organização de forma invertida -->
+
+
+    <artifactId>junittest</artifactId>
+    <!-- Nome do projeto ou artefato que será gerado -->
+
+
+    <version>1.0-SNAPSHOT</version>
+    <!-- Versão atual do projeto -->
+    <!-- SNAPSHOT indica que o projeto ainda está em desenvolvimento -->
+
+
+    <properties>
+
+        <!-- Define a codificação dos arquivos do projeto -->
+        <project.build.sourceEncoding>
+            UTF-8
+        </project.build.sourceEncoding>
+
+
+        <!-- Define a versão do Java utilizada para compilar o código-fonte -->
+        <maven.compiler.source>21</maven.compiler.source>
+
+
+        <!-- Define a versão do Java utilizada no código compilado -->
+        <maven.compiler.target>21</maven.compiler.target>
+
+    </properties>
+
+
+    <dependencies>
+
+        <!--
+        Nesta seção ficam as bibliotecas externas utilizadas pelo projeto.
+
+        É semelhante à seção "dependencies" do package.json do Node.
+        -->
+
+
+        <!-- Biblioteca JUnit 5 utilizada para realizar testes automatizados -->
+        <dependency>
+
+            <!-- Grupo responsável pela biblioteca -->
+            <groupId>org.junit.jupiter</groupId>
+
+            <!-- Nome da biblioteca -->
+            <artifactId>junit-jupiter</artifactId>
+
+            <!-- Versão da biblioteca -->
+            <version>5.14.1</version>
+
+            <!--
+            Indica que essa dependência será utilizada somente durante os testes.
+
+            Portanto, o JUnit não precisa fazer parte da aplicação final.
+            -->
+            <scope>test</scope>
+
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+
+        <!--
+        Configurações relacionadas ao processo de construção do projeto.
+
+        Aqui podemos definir plugins para:
+        - compilar
+        - testar
+        - empacotar
+        - gerar arquivos JAR
+        - executar outras tarefas
+        -->
+
+
+        <plugins>
+
+            <!--
+            Plugin responsável por localizar e executar os testes
+            durante o processo de build do Maven.
+            -->
+            <plugin>
+
+                <!-- Grupo responsável pelo plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <!-- Nome do plugin -->
+                <artifactId>maven-surefire-plugin</artifactId>
+
+                <!-- Versão do plugin -->
+                <version>3.6.0</version>
+
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
